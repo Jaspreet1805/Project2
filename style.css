@@ -6,20 +6,34 @@
   body {
     font-family: helvetica, arial, sans-serif;
     margin: 25px;
+    background-color: #101c2c;
+    color: #e8f1ff;
   }
   
   main {
-    display:block;
-    height:175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 30px;
+    background-color: #1b2c42;
+    border: 1px solid #345a80;
+    border-radius: 12px;
   }
   
   header {
-    border-bottom: 1px solid black;
+      border-bottom: 2px solid #3285ca;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
   }
   
   h1 {
     font-weight: bold;
-    color: #000;
+    color: #65bcff;
+    text-align: center;
+    font-size: 34px;
   }
   
   .bold {
@@ -46,7 +60,11 @@
   }
   
   .pet-image {
-    height:250px;
+    display: block;
+    height: 300px;
+    max-width: 100%;
+    width: auto;
+    border-radius: 6px;
   }
   
   .dashboard div {
@@ -54,43 +72,69 @@
   }
   
   .pet-image-container {
-    float:left;
-    padding:10px;
+    padding: 10px;
+    background-color: #152337;
+    border: 2px solid #3285ca;
+    border-radius: 10px;
   }
   
   .dashboard {
-    float:left;
-    padding:20px;
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+  }
+
+  .dashboard > div:not(.button-container) {
+    background-color: #263c56;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #4caaff;
+  }
+
+  .dashboard strong {
+    color: #78c6ff;
   }
   
   .button-container {
-    margin-top:20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
   }
   
   .button-container button {
-    width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
-    font-size:15px;
-    background-color: #1e2835;
-    border-color: #404853;
-    cursor:pointer;
-    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
-    color: #fafafa;
+    width: 100%;
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #24649c;
+    border: 1px solid #4fa8ec;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.2s, transform 0.2s;
   }
 
-  .button-container::after {
-    content: "";
-    display: block;
-    clear: both;
+    /* Changes the button color when the mouse is over it */
+  .button-container button:hover {
+    background-color: #398cce;
+    transform: translateY(-2px);
   }
+
+  /* Returns the button to normal when clicked */
+  .button-container button:active {
+    transform: translateY(0);
+  }
+
 
     .pet-comment {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    font-size: 16px;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #14283d;
+      border-left: 4px solid #55baff;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #bce3ff;
   }
